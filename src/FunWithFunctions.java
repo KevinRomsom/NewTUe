@@ -3,9 +3,20 @@
  */
 import java.util.*;
 public class FunWithFunctions {
+    double a;
+    double b;
+    double c;
+
+    void defineVariables(){
+        System.out.println("What are your a, b and c?");
+        a = sc.nextDouble();
+        b = sc.nextDouble();
+        c = sc.nextDouble();
+
+    }
 
     double f(double x){
-        return (x*x - 2*x - 3);
+        return (a*x*x - b*x - c);
     }
 
     void table(){
@@ -34,7 +45,8 @@ public class FunWithFunctions {
     }
 
     public static void main(String[] args){
-       // new FunWithFunctions().table();
+        new FunWithFunctions().defineVariables();
+        new FunWithFunctions().table();
         new FunWithFunctions().findingZero();
     }
 

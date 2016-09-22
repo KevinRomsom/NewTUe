@@ -22,11 +22,12 @@ public class FunWithFunctions {
     double x;
     int tries = 0;
     void findingZero(){
-        while(!(x <= 0.001 && x >= -0.001)) {
+        while(!(f(x) <= 0.001 && f(x) >= -0.001)) {
             System.out.println("what is your x?");
             x = sc.nextDouble();
             System.out.println("Your f(x) = "  + f(x));
             tries += 1;
+            System.out.println("Try again");
         }
         System.out.println("Good job, sexy. You only needed " +
                 tries + " tries");

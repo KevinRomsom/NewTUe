@@ -3,9 +3,9 @@
  */
 import java.util.*;
 public class FunWithFunctions {
-    double a;
-    double b;
-    double c;
+    static double a;
+    static double b;
+    static double c;
 
     void defineVariables(){
         System.out.println("What are your a, b and c?");

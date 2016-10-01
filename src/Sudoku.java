@@ -92,21 +92,24 @@ public class Sudoku {
             for (int i = 0; i < grid.length; i++) {
                 if (grid[j][i]==0) {
                     System.out.print("  ");
-                    if(counti == 2 || counti == 5 || counti == 8){
+                    if(counti == 2 || counti == 5){
                         System.out.print("|");
                     }
                 }
                 else{
                     System.out.print(grid[j][i]+ " ");
-                    if(counti == 2 || counti == 5 || counti == 8) {
+                    if(counti == 2 || counti == 5) {
                         System.out.print("|");
                     }
                 }
                 counti++;
+            } counti = 0;
+            if (countj == 2 || countj == 5){
+                System.out.print("-----------------------\n");
             }
             countj++;
             System.out.println("|");
-        }
+        }countj = 0;
 
         //END TODO
     }

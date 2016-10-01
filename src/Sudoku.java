@@ -7,7 +7,7 @@ public class Sudoku {
     private static final int SIZE = 9;     // size of the grid e.g. 9 -> 9x9
     private static final int DMAX = 9;     // max digit to be filled in e.g. 9
     private static final int BOXSIZE = 3;  // size of the boxes e.g. 3 -> 3x3
-    int[][] grid = new int[][] {
+    int[][] initialgrid = new int[][] {
             { 0, 6, 0,  0, 0, 1,  0, 9, 4 },
             { 3, 0, 0,  0, 0, 7,  1, 0, 0 },
             { 0, 0, 0,  0, 9, 0,  0, 0, 0 },
@@ -21,6 +21,8 @@ public class Sudoku {
 
     int solutionnr = 0; //solution counter
     ArrayList restoreemptyness = new ArrayList();
+    int[] firstone = new int[3];
+    int[][] grid = initialgrid;
     void run() {
         //TODO starts the solving process.
         print();
@@ -107,16 +109,17 @@ public class Sudoku {
     void solve() {
         //TODO see (4)
         int[] coordinates = findEmptySquare();
-
-        for(int i = 1; i <= 9; i++){
-            if(givesConflict(coordinates[0], coordinates[1], i)){
-                continue;
-            }
-            else{
+        restoreemptyness.add(coordinates[0]);
+        restoreemptyness.add(coordinates[1]);
+        for(int i = 1; i <= SIZE; i++){
+            if(!(givesConflict(coordinates[0], coordinates[1], i))) {
                 grid[coordinates[0]][coordinates[1]] = i;
                 solutionnr++;
             }
+            firstone[restoreemptyness[0], restoreemptyness[1], i]
         }
+        grid = initialgrid;
+
 
 
         //END TODO
